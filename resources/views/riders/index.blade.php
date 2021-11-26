@@ -44,8 +44,9 @@
                                 <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                                     Delete
                             </button>
-                    </td>
+                            </form>
                 @endif
+            </tr>
             @endforeach
 
 
@@ -83,8 +84,21 @@
                     @endif
                 <td class=""></td>
 
+                @if (Auth::check())
+                    <td class="px-2">
+                        <form action="{{ route('riders.destroy',$rider->id) }}" method="POST">
+                            @csrf
+
+                            @method('DELETE')
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                @endif
             </tr>
             @endforeach
+
 
         </table>
     </div>
@@ -97,6 +111,8 @@
             </button>
         </div>
     @endif
+
+
 
 @stop
 
