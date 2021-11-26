@@ -139,6 +139,6 @@ class RiderController extends Controller
 
         return redirect()->route('riders.index')
 
-            ->with('success','Product deleted successfully');
+            ->with('success','Rider deleted successfully');
     }
 }

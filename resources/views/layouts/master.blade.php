@@ -23,8 +23,14 @@
     <div class="search ">
         <input type="text" placeholder="Search" class="border-blue-300 ring-2 placeholder-blue-300 focus:ring-black focus:placeholder-black">
     </div>
+    @if(Auth::check())
+        <a href="/logout" class="p-1 ml-4 text-xl border-blue-300 ring-2 hover:bg-gray-400">Logout</a>
+    @endif
+    @if(Auth::guest())
     <a href="/login" class="p-1 ml-4 text-xl border-blue-300 ring-2 hover:bg-gray-400">Login</a>
     <a href="/register" class="p-1 ml-4 text-xl border-blue-300 ring-2 hover:bg-gray-400">Register</a>
+    @endif
+
 </header>
 </head>
 <div>
