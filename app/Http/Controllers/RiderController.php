@@ -76,7 +76,7 @@ class RiderController extends Controller
      */
     public function show(Rider $rider)
     {
-        return view('riders.trate',compact('rider'));
+        return view('riders.show',compact('rider'));
     }
 
     /**

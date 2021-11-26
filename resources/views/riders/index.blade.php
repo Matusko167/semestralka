@@ -13,7 +13,6 @@
                 <th class="bg-gray-500 ring-1 ring-black p-2">Team</th>
                 <th class="bg-gray-500 ring-1 ring-black p-2">Motorka</th>
                 <th class="bg-gray-500 ring-1 ring-black p-2">Body</th>
-                <th class="bg-gray-500 ring-1 ring-black p-2"></th>
             </tr>
             @foreach ($riders as $rider)
             <tr class="content-center">
@@ -23,12 +22,32 @@
                 <td class="bg-gray-400  ring-1 ring-black p-2">{{$rider->team}}</td>
                 <td class="bg-gray-400  ring-1 ring-black p-2">{{$rider->motorka}}</td>
                 <td class="bg-gray-400  ring-1 ring-black p-2">{{$rider->body}}</td>
-                <td class="p-2"><button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                <td class="px-2 hidden"><button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                         Detail
                     </button>
                 </td>
-            </tr>
+                @if (Auth::check())
+                    <td class="px-2">
+                    <div class="justify-center m-5 flex text-blue-200" >
+                        <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                            <a href="{{ route('riders.edit',$rider->id) }}">Edit</a>
+                        </button>
+                    </div>
+                    </td>
+                @endif
+                @if (Auth::check())
+                    <td class="px-2">
+                            <form action="{{ route('riders.destroy',$rider->id) }}" method="POST">
+                                @csrf
+
+                                @method('DELETE')
+                                <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                                    Delete
+                            </button>
+                    </td>
+                @endif
             @endforeach
+
 
         </table>
     </div>
@@ -48,18 +67,28 @@
                 <td class="bg-gray-400 ring-1 ring-black p-2">{{$rider->body}}</td>
 
             </tr>
-            @endforeach
+
             <tr class="content-center ">
-                <td class="p-2 w-full"><button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                <td class="p-2 w-full hidden"><button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                         Detail
                     </button></td>
-                <td class="bg-gray-400 ring-1 ring-black p-2"></td>
-                <td class="bg-gray-400 ring-1 ring-black p-2"></td>
+                @if (Auth::check())
+                    <td class="">
+                        <div class="justify-center m-5 flex text-blue-200" >
+                            <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                                <a href="{{ route('riders.edit',$rider->id) }}">Edit</a>
+                            </button>
+                        </div>
+                    </td>
+                    @endif
+                <td class=""></td>
 
             </tr>
+            @endforeach
 
         </table>
     </div>
+
 
     @if(Auth::check())
         <div class="justify-center m-5 flex text-blue-200" >

@@ -32,7 +32,6 @@
     @endif
 
 
-
     <form class="justify-center m-10 md:flex text-blue-200 text-center" action="{{ route('riders.store') }}" method="POST">
         @csrf
         <div class="shadow-lg justify-center content-center">
