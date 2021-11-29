@@ -11,7 +11,7 @@ class Rider extends Model
 
     protected $fillable = [
 
-        'cislo' , 'meno', 'priezvisko', 'team', 'motorka',
+        'cislo' , 'meno', 'priezvisko', 'team', 'motorka', 'body',
 
     ];
 }
