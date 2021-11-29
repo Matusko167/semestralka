@@ -2,14 +2,18 @@
 <!-- Stored in resources/views/layouts/master.blade.php -->
 <html lang="en">
 <head>
-    <title>App Name - @yield('title')</title>
+    <title>Slovak MX federation - @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/style.css">
         <link rel="stylesheet" href="/tailwind.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/10f01015b7.js" crossorigin="anonymous"></script>
+
         <meta charset="UTF-8">
 <body class="bg-gray-400">
 <header class="bg-gray-500 text-blue-300 text-3xl flex flex-wrap items-center mx-auto">

@@ -4,6 +4,13 @@
 @section('content')
 
 
+    <div class="intro">
+        <h1 class="Hlogo-header">
+           <span class="Hlogo">Slovak MX federation</span>
+        </h1>
+    </div>
+
+    <script src="{{ asset('js/animatedStart.js')}}"></script>
 
 <div class="relative m-20 border-2 border-black">
 
