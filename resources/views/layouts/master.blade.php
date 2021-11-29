@@ -17,7 +17,7 @@
         <meta charset="UTF-8">
 <body class="bg-gray-400">
 <header class="bg-gray-500 text-blue-300 text-3xl flex flex-wrap items-center mx-auto">
-    <img src="" alt="Logo" class="logo w-16 " >
+    <img src="{{ asset('img/logo.png') }}" alt="Logo" class="logo w-16 " >
     <ul class="menu flex-grow">
         <li id="main" class="flex flex-wrap" ><a href="/">Main</a></li>
         <li id="kalendar" class="flex flex-wrap"><a  href="/kalendar">Kalendar</a></li>

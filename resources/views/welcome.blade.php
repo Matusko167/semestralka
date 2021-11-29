@@ -27,7 +27,7 @@
 
         Vivamus finibus arcu tincidunt auctor ultrices. Praesent sollicitudin iaculis ultricies. Nunc suscipit ullamcorper urna vitae euismod. Cras nec nibh in neque fermentum vulputate. Etiam laoreet sed diam in placerat. Nunc eget ante consectetur, euismod diam convallis, porttitor ex. In hac habitasse platea dictumst. Donec interdum condimentum porttitor. Nulla hendrerit ante sed purus malesuada, eget molestie neque posuere. Maecenas hendrerit mattis sapien ac blandit. Mauris in dignissim nunc. Praesent malesuada maximus felis et malesuada. Aliquam ullamcorper justo non lacus laoreet volutpat. Vivamus efficitur magna nec lorem pellentesque sollicitudin.
     </p>
-    <img src="" alt="Motorky" class="relative px-10 pb-10 inline-block max-w-full w-screen">
+    <img src="{{ asset('img/main-img.jpg') }}" alt="Motorky" class="relative px-10 pb-10 inline-block max-w-full w-screen">
 
 </div>
 
