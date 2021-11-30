@@ -68,7 +68,7 @@ header .search input {
 
 
 
-.intro {
+.start {
     position: fixed;
     z-index: 10;
     left: 0;
@@ -79,7 +79,7 @@ header .search input {
     transition: 1s;
 }
 
-.Hlogo-header{
+.Hlogo1{
     position: absolute;
     top: 40%;
     left: 50%;
