@@ -4,8 +4,8 @@
 @section('content')
 
 
-    <div class="intro">
-        <h1 class="Hlogo-header">
+    <div class="start">
+        <h1 class="Hlogo1">
            <span class="Hlogo">Slovak MX federation</span>
         </h1>
     </div>

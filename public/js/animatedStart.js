@@ -1,25 +1,25 @@
-let intro = document.querySelector('.intro');
-let logo = document.querySelector('.Hlogo-header');
-let logoSpan = document.querySelector('.Hlogo');
+let start = document.querySelector('.start');
+let logo = document.querySelector('.Hlogo1');
+let logoS = document.querySelector('.Hlogo');
 
 window.addEventListener('DOMContentLoaded', ()=>{
 
     setTimeout(()=>{
             setTimeout(()=>{
-                logoSpan.classList.add('active');
+                logoS.classList.add('active');
         }, );
 
         setTimeout(()=>{
                 setTimeout(()=>{
-                    logoSpan.classList.remove('active');
-                    logoSpan.classList.add('fade');
+                    logoS.classList.remove('active');
+                    logoS.classList.add('fade');
             });
 
-        },3000);
+        },2000);
 
 
         setTimeout(()=>{
-            intro.style.top = '-100vh';
+            start.style.top = '-100vh';
 
         },2300);
 
