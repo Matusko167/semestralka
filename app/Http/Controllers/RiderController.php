@@ -42,15 +42,15 @@ class RiderController extends Controller
     {
         $request->validate([
 
-            'cislo' => 'required','integer', 'digits_between:1,999','unique:cislo',
+            'cislo' => ['required','integer', 'digits_between:1,999'],
 
-            'meno' => 'required','string',
+            'meno' => ['required','string'],
 
-            'priezvisko' => 'required','string',
+            'priezvisko' => ['required','string'],
 
             'team' => 'string',
 
-            'motorka' => 'required','string',
+            'motorka' => ['required','string'],
 
         ]);
 
@@ -98,15 +98,15 @@ class RiderController extends Controller
     {
         $request->validate([
 
-            'cislo' => 'required','integer', 'digits_between:1,999','unique:cislo',
+            'cislo' => ['required','integer', 'digits_between:1,999'],
 
-            'meno' => 'required','string',
+            'meno' => ['required','string'],
 
-            'priezvisko' => 'required','string',
+            'priezvisko' => ['required','string'],
 
             'team' => 'string',
 
-            'motorka' => 'required','string',
+            'motorka' => ['required','string'],
 
 
         ]);
