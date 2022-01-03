@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+
+<script src="{{ asset('js/validation.js')}}"></script>
     <div class="">
         <div class="justify-center m-10 md:flex text-blue-200 text-center sm:grid-flow-row">
             <div class="bg-gray-500 ring-1 ring-black p-2">

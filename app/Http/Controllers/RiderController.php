@@ -42,7 +42,7 @@ class RiderController extends Controller
     {
         $request->validate([
 
-            'cislo' => ['required','integer', 'digits_between:1,999'],
+            'cislo' => ['required','integer','digits_between:1,999'],
 
             'meno' => ['required','string'],
 
