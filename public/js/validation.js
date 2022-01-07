@@ -54,12 +54,63 @@ function skontroluj() {
     if (motorkaValue === ""){
         setBad(motorka, "Motorka nieje zadané");
     } else {
-        setGood(motorka);
-        motorkaBool = true;
+        switch(motorkaValue) {
+            case "KTM":
+                setGood(motorka);
+                motorkaBool = true;
+                break;
+            case "Yamaha":
+                setGood(motorka);
+                motorkaBool = true;
+                break;
+            case "Suzuki":
+                setGood(motorka);
+                motorkaBool = true;
+                break;
+            case "Honda":
+                setGood(motorka);
+                motorkaBool = true;
+                break;
+            case "Kawasaki":
+                setGood(motorka);
+                motorkaBool = true;
+                break;
+            case "Husqvarna":
+                setGood(motorka);
+                motorkaBool = true;
+                break;
+            case "TM":
+                setGood(motorka);
+                motorkaBool = true;
+                break;
+            case "GasGas":
+                setGood(motorka);
+                motorkaBool = true;
+                break;
+            case "Beta":
+                setGood(motorka);
+                motorkaBool = true;
+                break;
+            default:
+                setBad(motorka, "Motorka je zadaná zle. Použi tieto hodnoty" +
+                    "|Yamaha|KTM|Suzuki|Honda|Kawasaki|Husqvarna|TM|GasGas|Beta");
+        }
+
     }
 
     if (cisloBool === true && menoBool === true && priezviskoBool === true && teamBool === true && motorkaBool === true) {
-        alert("pohoda");
+        $.ajax({
+            url: "{{ route('riders.store') }}",
+            action: 'store',
+            type: 'POST',
+            data: {
+                cislo: cisloValue,
+                meno: menoValue,
+                priezvisko: priezviskoValue,
+                team: teamValue,
+                motorka: motorkaValue,
+            }
+        });
     }
 }
 

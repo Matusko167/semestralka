@@ -86,14 +86,16 @@
 
                 @if (Auth::check())
                     <td class="px-2">
+                        <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{ route('riders.destroy',$rider->id) }}"></a>
+
                         <form action="{{ route('riders.destroy',$rider->id) }}" method="POST">
                             @csrf
-
                             @method('DELETE')
                             <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                                 Delete
                             </button>
                         </form>
+
                     </td>
                 @endif
             </tr>
