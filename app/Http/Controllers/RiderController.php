@@ -48,7 +48,7 @@ class RiderController extends Controller
 
             'priezvisko' => ['required','string'],
 
-            'team' => 'string',
+            'team' => ['required','string'],
 
             'motorka' => ['required','string'],
 

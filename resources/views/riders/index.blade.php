@@ -4,6 +4,7 @@
 @section('content')
 
 
+
     <div class="justify-center m-10 hidden md:flex text-blue-200 text-center">
         <table class="shadow-lg justify-center content-center ">
             <tr class="content-center">
@@ -86,7 +87,6 @@
 
                 @if (Auth::check())
                     <td class="px-2">
-                        <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{ route('riders.destroy',$rider->id) }}"></a>
 
                         <form action="{{ route('riders.destroy',$rider->id) }}" method="POST">
                             @csrf

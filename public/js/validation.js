@@ -100,10 +100,10 @@ function skontroluj() {
 
     if (cisloBool === true && menoBool === true && priezviskoBool === true && teamBool === true && motorkaBool === true) {
         $.ajax({
-            url: "{{ route('riders.store') }}",
-            action: 'store',
+            url: 'http://127.0.0.1:8000/riders',
             type: 'POST',
             data: {
+                '_token': $('meta[name=csrf-token]').attr('content'),
                 cislo: cisloValue,
                 meno: menoValue,
                 priezvisko: priezviskoValue,
@@ -111,6 +111,7 @@ function skontroluj() {
                 motorka: motorkaValue,
             }
         });
+        window.location.href="http://127.0.0.1:8000/riders";
     }
 }
 
