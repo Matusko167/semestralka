@@ -116,10 +116,6 @@ class RiderController extends Controller
         $rider->update($request->all());
 
 
-
-        return redirect()->route('riders.index')
-
-            ->with('success','Rider updated successfully');
     }
 
     /**

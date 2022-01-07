@@ -99,6 +99,7 @@ function skontroluj() {
     }
 
     if (cisloBool === true && menoBool === true && priezviskoBool === true && teamBool === true && motorkaBool === true) {
+        if (info === "create"){
         $.ajax({
             url: 'http://127.0.0.1:8000/riders',
             type: 'POST',
@@ -109,9 +110,32 @@ function skontroluj() {
                 priezvisko: priezviskoValue,
                 team: teamValue,
                 motorka: motorkaValue,
+            },
+            success: function(){
+                window.location.href="http://127.0.0.1:8000/riders";
             }
         });
-        window.location.href="http://127.0.0.1:8000/riders";
+
+    } else if (info === "edit") {
+        $.ajax({
+            url: 'http://127.0.0.1:8000/riders/' + riderID,
+            type: 'PUT',
+            data: {
+                '_token': $('meta[name=csrf-token]').attr('content'),
+                cislo: cisloValue,
+                meno: menoValue,
+                priezvisko: priezviskoValue,
+                team: teamValue,
+                motorka: motorkaValue,
+            },
+            success: function(){
+                window.location.href="http://127.0.0.1:8000/riders";
+            }
+        });
+
+    } else {
+        console.log("error: zla const info")
+    }
     }
 }
 

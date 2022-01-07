@@ -80,5 +80,9 @@
 
 </div>
 
+<script>
+    const info = "create";
+</script>
+
 <script src="{{ asset('js/validation.js')}}"></script>
 @stop

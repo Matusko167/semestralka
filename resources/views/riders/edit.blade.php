@@ -3,7 +3,6 @@
 @section('content')
 
 
-<script src="{{ asset('js/validation.js')}}"></script>
     <div class="">
         <div class="justify-center m-10 md:flex text-blue-200 text-center sm:grid-flow-row">
             <div class="bg-gray-500 ring-1 ring-black p-2">
@@ -31,48 +30,59 @@
             </div>
     @endif
 
-    <form class="justify-center m-10 md:flex text-blue-200 text-center" action="{{ route('riders.update',$rider->id) }}" method="POST">
+    <form id="form" class="justify-center m-10 md:flex text-blue-200 text-center" >
         @csrf
         @method('PUT')
         <div class="shadow-lg justify-center content-center">
-            <div class="">
-                <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
+            <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
+                <div class="">
                     <strong>Name:</strong>
-                    <input type="number" name="cislo" value="{{ $rider->cislo }}" class="text-black" placeholder="Číslo" required>
+                    <input id="cislo" type="number" name="cislo" value="{{ $rider->cislo }}" class="text-black" placeholder="Číslo">
                 </div>
+                <small class="invisible absolute">Error</small>
             </div>
-            <div class="">
-                <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
+            <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
+                <div class="">
                     <strong>Name:</strong>
-                    <input type="text" name="meno" value="{{ $rider->meno }}" class="text-black" placeholder="Meno" required>
+                    <input id="meno" type="text" name="meno" value="{{ $rider->meno }}" class="text-black" placeholder="Meno">
                 </div>
+                <small class="invisible absolute">Error</small>
             </div>
-            <div class="">
-                <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
+            <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
+                <div class="">
                     <strong>Name:</strong>
-                    <input type="text" name="priezvisko" value="{{ $rider->priezvisko }}" class="text-black" placeholder="Priezvisko" required>
+                    <input id="priezvisko" type="text" name="priezvisko" value="{{ $rider->priezvisko }}" class="text-black" placeholder="Priezvisko" >
                 </div>
+                <small class="invisible absolute">Error</small>
             </div>
-            <div class="">
-                <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
+            <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
+                <div class="">
                     <strong>Name:</strong>
-                    <input type="text" name="team" value="{{ $rider->team }}" class="text-black" placeholder="Team" required>
+                    <input id="team" type="text" name="team" value="{{ $rider->team }}" class="text-black" placeholder="Team" >
                 </div>
+                <small class="invisible absolute">Error</small>
             </div>
-            <div class="">
-                <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
+            <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
+                <div class="">
                     <strong>Name:</strong>
-                    <input type="text" name="motorka" value="{{ $rider->motorka }}" class="text-black" placeholder="Motorka" required>
+                    <input id="motorka" type="text" name="motorka" value="{{ $rider->motorka }}" class="text-black" placeholder="Motorka" >
                 </div>
+                <small class="invisible absolute">Error</small>
             </div>
 
             <div class=" bg-gray-500 ring-1 ring-black p-2">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Submit</button>
+                <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Submit</button>
             </div>
         </div>
     </form>
     </div>
     </form>
 
+<script>
+    const riderID = {{ $rider->id }};
+    const info = "edit";
+</script>
+
+<script src="{{ asset('js/validation.js')}}"></script>
 
 @endsection
