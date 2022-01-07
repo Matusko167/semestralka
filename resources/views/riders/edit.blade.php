@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <script src="{{ asset('js/validation.js')}}"></script>
     <div class="">
         <div class="justify-center m-10 md:flex text-blue-200 text-center sm:grid-flow-row">
@@ -37,31 +38,31 @@
             <div class="">
                 <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
                     <strong>Name:</strong>
-                    <input type="number" name="cislo" value="{{ $rider->cislo }}" class="text-black" placeholder="Číslo">
+                    <input type="number" name="cislo" value="{{ $rider->cislo }}" class="text-black" placeholder="Číslo" required>
                 </div>
             </div>
             <div class="">
                 <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
                     <strong>Name:</strong>
-                    <input type="text" name="meno" value="{{ $rider->meno }}" class="text-black" placeholder="Meno">
+                    <input type="text" name="meno" value="{{ $rider->meno }}" class="text-black" placeholder="Meno" required>
                 </div>
             </div>
             <div class="">
                 <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
                     <strong>Name:</strong>
-                    <input type="text" name="priezvisko" value="{{ $rider->priezvisko }}" class="text-black" placeholder="Priezvisko">
+                    <input type="text" name="priezvisko" value="{{ $rider->priezvisko }}" class="text-black" placeholder="Priezvisko" required>
                 </div>
             </div>
             <div class="">
                 <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
                     <strong>Name:</strong>
-                    <input type="text" name="team" value="{{ $rider->team }}" class="text-black" placeholder="Team">
+                    <input type="text" name="team" value="{{ $rider->team }}" class="text-black" placeholder="Team" required>
                 </div>
             </div>
             <div class="">
                 <div class="p-4 bg-gray-500 ring-1 ring-black p-2">
                     <strong>Name:</strong>
-                    <input type="text" name="motorka" value="{{ $rider->motorka }}" class="text-black" placeholder="Motorka">
+                    <input type="text" name="motorka" value="{{ $rider->motorka }}" class="text-black" placeholder="Motorka" required>
                 </div>
             </div>
 
@@ -72,5 +73,6 @@
     </form>
     </div>
     </form>
+
 
 @endsection

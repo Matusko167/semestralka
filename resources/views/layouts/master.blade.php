@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/10f01015b7.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
         <meta charset="UTF-8">
 <body class="bg-gray-400">
 <header class="bg-gray-500 text-blue-300 text-3xl flex flex-wrap items-center mx-auto">
