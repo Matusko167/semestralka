@@ -36,4 +36,6 @@ Route::get('/kalendar', function () {
     return view('kalendar');
 });
 
+Route::resource('blogs', \App\Http\Controllers\BlogController::class);
+
 Route::resource('riders', RiderController::class);

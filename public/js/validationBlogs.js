@@ -1,0 +1,94 @@
+const form = document.getElementById('form');
+const title = document.getElementById('title');
+const popis = document.getElementById('popis');
+const text = document.querySelector('textarea[name="text"]');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    skontroluj()});
+
+let titleBool = false;
+let popisBool = false;
+let textBool = false;
+
+function skontroluj() {
+    const titleValue = title.value.trim();
+    const popisValue = popis.value.trim();
+    const textValue = text.value.trim();
+
+    if (titleValue === ""){
+        setBad(title, "Názov nieje zadaný");
+    } else {
+        setGood(title);
+        titleBool = true;
+    }
+
+    if (popisValue === ""){
+        setBad(popis, "Popis nieje zadaný");
+    } else {
+        setGood(popis);
+        popisBool = true;
+    }
+
+    if (textValue === ""){
+        setBad(text, "Text nieje zadaný");
+    } else {
+        setGood(text);
+        textBool = true;
+    }
+
+
+
+    if (titleBool === true && popisBool === true && textBool === true) {
+        if (info === "create"){
+        $.ajax({
+            url: 'http://127.0.0.1:8000/blogs',
+            type: 'POST',
+            data: {
+                '_token': $('meta[name=csrf-token]').attr('content'),
+                title: titleValue,
+                popis: popisValue,
+                text: textValue,
+
+            },
+            success: function(){
+                window.location.href="http://127.0.0.1:8000/blogs";
+            }
+        });
+
+    } else if (info === "edit") {
+        $.ajax({
+            url: 'http://127.0.0.1:8000/blogs/' + postID,
+            type: 'PUT',
+            data: {
+                '_token': $('meta[name=csrf-token]').attr('content'),
+                title: titleValue,
+                popis: popisValue,
+                text: textValue,
+            },
+            success: function(){
+                window.location.href="http://127.0.0.1:8000/blogs";
+            }
+        });
+
+    } else {
+        console.log("error: zla const info")
+    }
+    }
+}
+
+function setBad(input, message){
+    const formParent = input.parentElement;
+    const form = formParent.parentElement;
+    const small = form.querySelector('small');
+    small.className = "visible bottom-0 left-0 static";
+    small.innerText = message;
+}
+
+function setGood(input){
+    const formParent = input.parentElement;
+    const form = formParent.parentElement;
+    const small = form.querySelector('small');
+    small.className = "invisible  absolute";
+}

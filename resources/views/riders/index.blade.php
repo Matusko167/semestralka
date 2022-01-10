@@ -6,7 +6,7 @@
 
 
     <div class="justify-center m-10 hidden md:flex text-blue-200 text-center">
-        <table class="shadow-lg justify-center content-center ">
+        <table class="shadow-lg justify-center content-center">
             <tr class="content-center">
                 <th class="bg-gray-500 ring-1 ring-black p-2">Číslo</th>
                 <th class="bg-gray-500 ring-1 ring-black p-2" >Meno</th>
