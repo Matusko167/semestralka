@@ -57,6 +57,13 @@
                     </div>
                     <small class="invisible absolute">Error</small>
                 </div>
+                <div class="form p-4 bg-gray-500 ring-1 ring-black p-2">
+                    <div class="">
+                        <strong>Obrazok URL</strong>
+                        <input id="url" type="text" name="url" class="text-black" placeholder="URL" value="{{ $blog->url }}">
+                    </div>
+                    <small class="invisible absolute">Error</small>
+                </div>
 
 
                 <div class=" bg-gray-500 ring-1 ring-black p-2">

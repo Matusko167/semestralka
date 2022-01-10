@@ -41,6 +41,7 @@ class BlogController extends Controller
             'title' => 'required',
             'text' => 'required',
             'popis' => 'required',
+            'url' => 'required',
         ]);
 
         Blog::create($request->all());
@@ -82,6 +83,7 @@ class BlogController extends Controller
             'title' => 'required',
             'text' => 'required',
             'popis' => 'required',
+            'url' => 'required',
         ]);
 
         $blog->update($request->all());

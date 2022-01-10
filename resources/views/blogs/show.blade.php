@@ -13,7 +13,10 @@
                 <div>
                     <p>{{ $blog->text }}</p>
                 </div>
-                <div class="pull-right">
+                <div>
+                    <img src="{{ $blog->url }}" alt="">
+                </div>
+                <div class="">
                     <button class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-4 border-b-4 border-gray-600 hover:border-gray-800 rounded">
                         <a class="" href="{{ route('blogs.index') }}"> Späť</a>
                     </button>

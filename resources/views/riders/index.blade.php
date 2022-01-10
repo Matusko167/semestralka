@@ -42,7 +42,7 @@
                                 @csrf
 
                                 @method('DELETE')
-                                <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                                <button onclick="return confirm('Si si istý/istá že to chceš vymazať?')" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                                     Delete
                             </button>
                             </form>
@@ -87,11 +87,14 @@
 
                 @if (Auth::check())
                     <td class="px-2">
-                            <a class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-                               onclick="return confirm('Are you sure?')" href="{{ route('riders.destroy',$rider->id) }}" >
+                        <form action="{{ route('riders.destroy',$rider->id) }}" method="POST">
+                            @csrf
+
+                            @method('DELETE')
+                            <button onclick="return confirm('Si si istý/istá že to chceš vymazať?')" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                                 Delete
-                            </a>
-                    </td>
+                            </button>
+                        </form>
                 @endif
             </tr>
             @endforeach

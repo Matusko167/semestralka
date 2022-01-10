@@ -32,7 +32,7 @@
                         <a class="bg-gray-500 ring-1 ring-black p-2 hover:bg-gray-800" href="{{ route('blogs.edit',$blog->id) }}">Edituj</a>
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="bg-gray-500 ring-1 ring-black p-2 hover:bg-gray-800">Vymaž</button>
+                        <button type="submit" class="bg-gray-500 ring-1 ring-black p-2 hover:bg-gray-800" onclick="return confirm('Si si istý/istá že to chceš vymazať?')">Vymaž</button>
                         @endif
                     </form>
                 </td>
@@ -51,12 +51,15 @@
                     <td class="bg-gray-500 p-2 truncate">{{ $blog->title }}</td>
                 </tr><tr>
                     <td>
-                                <a class="bg-gray-500 ring-1 ring-black p-2 hover:bg-gray-800" href="{{ route('blogs.show',$blog->id) }}">Otvor</a>
+                        <form class="text-white" action="{{ route('blogs.destroy',$blog->id) }}" method="POST">
+                            <a class="bg-gray-500 ring-1 ring-black p-2 hover:bg-gray-800" href="{{ route('blogs.show',$blog->id) }}">Otvor</a>
                             @if (Auth::check())
                                 <a class="bg-gray-500 ring-1 ring-black p-2 hover:bg-gray-800" href="{{ route('blogs.edit',$blog->id) }}">Edituj</a>
-                                <a class="bg-gray-500 ring-1 ring-black p-2 hover:bg-gray-800" onclick="return confirm('Are you sure?')">Vymaž</a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-gray-500 ring-1 ring-black p-2 hover:bg-gray-800" onclick="return confirm('Si si istý/istá že to chceš vymazať?')">Vymaž</button>
                             @endif
-
+                        </form>
                     </td>
                 </tr>
             @endforeach
