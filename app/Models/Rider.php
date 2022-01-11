@@ -14,4 +14,7 @@ class Rider extends Model
         'cislo' , 'meno', 'priezvisko', 'team', 'motorka', 'body',
 
     ];
+
+
+
 }

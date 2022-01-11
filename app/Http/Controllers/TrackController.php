@@ -17,8 +17,15 @@ class TrackController extends Controller
         $tracks = Track::all();
 
 
-
         return view('tracks.index',compact('tracks'));
+    }
+
+    function deleteView()
+    {
+        $tracks = Track::all();
+
+
+        return view('tracks.delete',compact('tracks'));
     }
 
     /**
@@ -84,6 +91,12 @@ class TrackController extends Controller
      */
     public function destroy(Track $track)
     {
-        //
+        $track->delete();
+
+
+
+        return redirect()->route('tracks.index')
+
+            ->with('success','Track deleted successfully');
     }
 }

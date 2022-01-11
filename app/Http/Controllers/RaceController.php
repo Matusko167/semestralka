@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Race;
 use Illuminate\Http\Request;
 
 class RaceController extends Controller
@@ -13,7 +14,7 @@ class RaceController extends Controller
      */
     public function index()
     {
-        $races = \App\Models\Race::all();
+        $races = Race::all();
 
         return view('races.index',compact('races'));
     }
@@ -45,9 +46,11 @@ class RaceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Race $race)
     {
-        //
+        $riders = Race::find($race->id)->riders;
+
+        return view('races.show',compact('race','riders'));
     }
 
     /**

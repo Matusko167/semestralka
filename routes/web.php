@@ -24,17 +24,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/trate', function () {
-    return view('trate');
-});
-
-Route::get('/tabulka', function () {
-    return view('tabulka');
-});
-
-Route::get('/kalendar', function () {
-    return view('kalendar');
-});
+Route::get('/tracks/delete', [\App\Http\Controllers\TrackController::class, 'deleteView']);
 
 Route::resource('blogs', \App\Http\Controllers\BlogController::class);
 
@@ -43,3 +33,4 @@ Route::resource('riders', RiderController::class);
 Route::resource('tracks', \App\Http\Controllers\TrackController::class);
 
 Route::resource('races', \App\Http\Controllers\RaceController::class);
+
