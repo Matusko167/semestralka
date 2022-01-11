@@ -22,9 +22,9 @@
     <img src="{{ asset('img/logo.png') }}" alt="Logo" class="logo w-16 " >
     <ul class="menu flex-grow">
         <li id="main" class="flex flex-wrap" ><a href="/">Main</a></li>
-        <li id="kalendar" class="flex flex-wrap"><a  href="/kalendar">Kalendar</a></li>
+        <li id="kalendar" class="flex flex-wrap"><a  href="/races">Kalendar</a></li>
         <li id="tabulka" class="flex flex-wrap"><a  href="/riders">Tabulka</a></li>
-        <li id="trate" class="flex flex-wrap"><a  href="/trate">Trate</a></li>
+        <li id="trate" class="flex flex-wrap"><a  href="/tracks">Trate</a></li>
         <li id="blog" class="flex flex-wrap"><a  href="/blogs">Blog</a></li>
     </ul>
     <div class="search ">

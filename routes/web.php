@@ -39,3 +39,7 @@ Route::get('/kalendar', function () {
 Route::resource('blogs', \App\Http\Controllers\BlogController::class);
 
 Route::resource('riders', RiderController::class);
+
+Route::resource('tracks', \App\Http\Controllers\TrackController::class);
+
+Route::resource('races', \App\Http\Controllers\RaceController::class);
