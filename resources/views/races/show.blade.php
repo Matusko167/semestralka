@@ -12,6 +12,16 @@
                     <p>{{ $race->datum }}</p>
                     <p >{{ $race->trieda }}</p>
                 </div>
+                @if (Auth::check())
+                    <form action="{{ route('races.destroy',$race->id) }}" method="POST">
+                        @csrf
+
+                        @method('DELETE')
+                        <button onclick="return confirm('Si si istý/istá že to chceš vymazať?')" type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                            Delete
+                        </button>
+                    </form>
+                @endif
                 <div class=" justify-center content-center p-3">
 
                     <h1 class="p-4 text-5xl" >Prihlásený jazdci</h1>

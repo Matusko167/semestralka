@@ -13,7 +13,7 @@ class Race extends Model
 
     protected $fillable = [
 
-        'miesto','datum','trieda','id'
+        'id','miesto','datum','trieda',
     ];
     /**
      * @var mixed

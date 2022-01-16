@@ -14,9 +14,7 @@ use App\Http\Controllers\RiderController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
