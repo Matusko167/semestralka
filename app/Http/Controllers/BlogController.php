@@ -38,9 +38,9 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'text' => 'required',
-            'popis' => 'required',
+            'title' => ['required','string'],
+            'text' => ['required','string'],
+            'popis' => ['required','string'],
             'url' => 'required',
         ]);
 
